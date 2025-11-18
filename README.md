@@ -47,12 +47,8 @@ Připravit robustní datové podklady, které umožní porovnání dostupnosti p
 - `04_question_4_food_price_vs_wage.sql` – roky s růstem cen > růst mezd  
 - `05_question_5_gdp_effect.sql` – vliv HDP na mzdy a ceny potravin  
 
-1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají? Analýza ukazuje, že mzdy v České republice dlouhodobě rostou, ale tempo růstu se liší podle odvětví. V některých sektorech, například v pohostinství nebo zemědělství, byl růst pomalejší než v technologických nebo finančních službách. Pokles mezd se v dostupných datech nevyskytuje, spíše jde o stagnaci v méně výkonných odvětvích. Celkově lze říci, že trend je pozitivní, i když nerovnoměrný.
+Shrnutí výsledků
 
-2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd? Na začátku sledovaného období bylo možné za průměrnou mzdu koupit výrazně méně litrů mléka a kilogramů chleba než na jeho konci. V posledním období se počet jednotek těchto základních potravin zvýšil, což ukazuje na zlepšení jejich dostupnosti. Přestože ceny potravin rostly, růst mezd byl rychlejší, a tím se zvýšila kupní síla obyvatel. Dostupnost základních potravin se tedy v čase zlepšila.
-
-3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? Z porovnání jednotlivých kategorií vyplývá, že nejpomaleji zdražují některé základní potraviny, například brambory nebo chléb. Tyto položky vykazují nižší meziroční procentuální nárůst cen než například maso nebo mléčné výrobky. To znamená, že jejich cenová stabilita je vyšší a méně zatěžuje rozpočet domácností. Pro spotřebitele jsou tak dlouhodobě dostupnější.
-
-4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)? Ano, v datech se objevuje rok, kdy meziroční nárůst cen potravin překročil růst mezd o více než 10 %. Tento výkyv znamenal snížení reálné kupní síly obyvatel, protože mzdy nedokázaly pokrýt rychlejší zdražování. Taková situace ukazuje na ekonomickou nerovnováhu, která se projevila v dostupnosti základních potravin. V dalších letech se však trend opět stabilizoval.
-
-5. Má výška HDP vliv na změny ve mzdách a cenách potravin?
+Analýza ukazuje, že mzdy v ČR dlouhodobě rostou, i když ne rovnoměrně napříč odvětvími, zatímco dostupnost základních potravin, jako je mléko a chléb, se díky růstu mezd postupně zlepšila.
+Nejstabilnější cenový vývoj vykazují některé základní potraviny, zatímco jiné, například maso, zdražují rychleji.
+V datech se objevuje i období, kdy ceny potravin rostly výrazně rychleji než mzdy, což vedlo ke snížení kupní síly obyvatel. Růst HDP má obecně pozitivní vliv na mzdy, ale jeho dopad na ceny potravin je méně přímý a často opožděný.

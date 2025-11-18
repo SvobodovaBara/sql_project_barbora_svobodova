@@ -1,3 +1,4 @@
+
 # Projekt SQL – Dostupnost potravin v ČR
 
 ## Úvod

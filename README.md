@@ -53,13 +53,24 @@ Připravit robustní datové podklady, které umožní porovnání dostupnosti p
     Data ukazují, že průměrné mzdy v České republice dlouhodobě rostou, i když ne rovnoměrně napříč odvětvími. Většina odvětví       vykazuje stabilní růst, ale například v období hospodářské krize došlo u některých odvětví k mírnému poklesu. Celkový trend      je však pozitivní – průměrná mzda se od roku 2006 do posledního sledovaného roku zvýšila o více než 50 %. Obecně lze tedy        říci, že kupní síla obyvatel postupně roste, i když rozdíly mezi odvětvími přetrvávají.
    
 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období?
-   Data ukazují, že na začátku sledovaného období v roce 2006 bylo možné za průměrnou mzdu koupit přibližně 850 kg chleba nebo 1    200 litrů mléka. Na konci sledovaného období v roce 2021 to bylo již více než 1 300 kg chleba nebo 1 900 litrů mléka.            Přestože ceny potravin v průběhu let rostly, růst mezd byl výraznější. Obecně lze tedy říci, že kupní síla obyvatel se v         oblasti základních potravin zlepšila.
+   Na základě dostupných dat o mzdách a cenách potravin lze porovnat kupní sílu mezi prvním a posledním společně sledovaným obdobím, tedy mezi      rokem 2006 a rokem 2018.
+
+   V roce 2006 si mohl průměrný zaměstnanec za svou mzdu koupit:
+   přibližně 1 432 litrů mléka, nebo
+   asi 1 282 kilogramů chleba.
+   V roce 2018 se kupní síla dále zvýšila a za průměrnou mzdu bylo možné pořídit:
+   zhruba 1 639 litrů mléka, nebo
+   přibližně 1 340 kilogramů chleba.
+
+  Závěr
+  Během sledovaného období došlo k růstu cen potravin, avšak růst mezd byl rychlejší.
+  To znamená, že kupní síla obyvatel se v případě těchto základních potravin zlepšila — v roce 2018 si lidé mohli za průměrnou mzdu koupit více    chleba i mléka než v roce 2006.
    
 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? 
-   Analýza meziročních změn cen ukazuje, že nejpomaleji zdražují základní potraviny, jako je mléko a některé obilné produkty.       Jejich průměrný meziroční nárůst se pohybuje kolem 2–3 %, což je výrazně méně než u masa nebo u některých mléčných výrobků.      Tyto položky tak vykazují stabilnější cenový vývoj. Obecně lze říci, že základní potraviny mají nejnižší cenovou volatilitu.
+   Nejpomaleji zdražuje kategorie cukr krystalový, která meziročně zlevnila o 1,92 %.
   
 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
-   Ano, například v roce 2008 a znovu v roce 2012 ceny potravin vzrostly meziročně o více než 10 %, zatímco mzdy rostly jen o 3–    5 %. V těchto letech se kupní síla obyvatel snížila, protože růst cen převážil nad růstem příjmů. Tento jev se projevil          zejména u masa a mléčných výrobků. Obecně lze tedy říci, že v některých krizových obdobích byla dostupnost potravin pro          domácnosti horší.
+   Ne, podle dostupných dat žádný takový rok nebyl.
 
 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na      cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
    Data ukazují, že růst HDP má jasný vliv na mzdy, zatímco na ceny potravin působí méně přímo. V letech, kdy HDP České             republiky rostlo výrazněji (např. 2015–2018 s růstem přes 4 % ročně), došlo současně i k rychlejšímu růstu mezd – průměrně o     6–8 %. Dopad na ceny potravin je spíše opožděný: v některých letech se vyšší HDP projevil v mírném zdražení potravin, ale        často až s ročním zpožděním. Obecně lze tedy říci, že HDP koreluje především s růstem mezd, zatímco vliv na ceny potravin je     slabší a méně konzistentní.

@@ -1,25 +1,45 @@
-WITH milk_bread AS (
+WITH raw_prices AS (
     SELECT
         year,
-        category_name AS food_name,
+        category_name,
         avg_price
     FROM data_academy_content.t_barbora_svobodova_project_sql_primary_final
     WHERE category_name ILIKE '%mléko%' OR category_name ILIKE '%chléb%'
 ),
-avg_wage AS (
-    SELECT year, avg_wage
-    FROM data_academy_content.t_barbora_svobodova_project_sql_primary_final
-    GROUP BY year, avg_wage
+prices AS (
+    SELECT
+        year,
+        CASE
+            WHEN category_name ILIKE '%mléko%' THEN 'mléko'
+            WHEN category_name ILIKE '%chléb%' THEN 'chléb'
+        END AS food_name,
+        AVG(avg_price)::numeric AS avg_price_year,
+        COUNT(*) AS n_price_records
+    FROM raw_prices
+    GROUP BY year, food_name
 ),
-first_last_years AS (
+wages AS (
+    SELECT
+        year,
+        AVG(avg_wage)::numeric AS avg_wage_year
+    FROM data_academy_content.t_barbora_svobodova_project_sql_primary_final
+    WHERE avg_wage IS NOT NULL
+    GROUP BY year
+),
+years AS (
     SELECT MIN(year) AS first_year, MAX(year) AS last_year
-    FROM milk_bread
+    FROM prices
 )
 SELECT
-    m.year,
-    m.food_name,
-    ROUND((a.avg_wage / m.avg_price)::numeric, 2) AS purchasable_units
-FROM milk_bread m
-JOIN avg_wage a ON m.year = a.year
-JOIN first_last_years f ON m.year = f.first_year OR m.year = f.last_year
-ORDER BY m.year, m.food_name;
+    p.year,
+    p.food_name,
+    ROUND(p.avg_price_year, 2) AS avg_price,
+    p.n_price_records,
+    ROUND(p.avg_price_year, 2) AS avg_price,
+    ROUND(w.avg_wage_year, 2) AS avg_wage,
+    ROUND((w.avg_wage_year / NULLIF(p.avg_price_year, 0))::numeric, 2) AS purchasable_units
+FROM prices p
+JOIN wages w USING (year)
+CROSS JOIN years y
+WHERE p.year IN (y.first_year, y.last_year)
+ORDER BY p.year, p.food_name;

@@ -1,5 +1,4 @@
 WITH annual AS (
-    -- agregace dat na úroveň roku (mzdy + ceny)
     SELECT
         year,
         AVG(avg_price)::numeric AS avg_price,
@@ -7,40 +6,44 @@ WITH annual AS (
     FROM data_academy_content.t_barbora_svobodova_project_sql_primary_final
     GROUP BY year
 ),
-growth AS (
-    -- přidání předchozího roku
+yoy AS (
     SELECT
         year,
-        avg_price,
-        avg_wage,
-        LAG(avg_price) OVER (ORDER BY year) AS prev_price,
-        LAG(avg_wage) OVER (ORDER BY year) AS prev_wage
+        ROUND(((avg_price - LAG(avg_price) OVER (ORDER BY year)) / NULLIF(LAG(avg_price) OVER (ORDER BY year),0) * 100)::numeric,2) AS price_growth,
+        ROUND(((avg_wage - LAG(avg_wage) OVER (ORDER BY year)) / NULLIF(LAG(avg_wage) OVER (ORDER BY year),0) * 100)::numeric,2) AS wage_growth
     FROM annual
 ),
-yoy AS (
-    -- výpočet meziročního růstu cen a mezd
-    SELECT
-        year,
-        ROUND(((avg_price - prev_price)/NULLIF(prev_price,0)*100)::numeric,2) AS price_growth,
-        ROUND(((avg_wage - prev_wage)/NULLIF(prev_wage,0)*100)::numeric,2) AS wage_growth
-    FROM growth
-),
-gdp AS (
-    -- meziroční růst HDP pro ČR
+gdp_cr AS (
     SELECT
         year,
         gdp,
-        LAG(gdp) OVER (ORDER BY year) AS prev_gdp
+        ROUND(((gdp - LAG(gdp) OVER (ORDER BY year)) / NULLIF(LAG(gdp) OVER (ORDER BY year),0) * 100)::numeric,2) AS gdp_growth
     FROM data_academy_content.t_barbora_svobodova_project_sql_secondary_final
-    WHERE country_name = 'Czech Republic'   -- ověř si přesný název
+    WHERE country_name ILIKE 'Czech%'
+),
+combined AS (
+    SELECT
+        y.year,
+        g.gdp,
+        g.gdp_growth,
+        y.price_growth,
+        y.wage_growth,
+        LEAD(y.price_growth) OVER (ORDER BY y.year) AS price_growth_next_year,
+        LEAD(y.wage_growth) OVER (ORDER BY y.year) AS wage_growth_next_year
+    FROM yoy y
+    JOIN gdp_cr g USING (year)
 )
 SELECT
-    y.year,
-    ROUND(((g.gdp - g.prev_gdp)/NULLIF(g.prev_gdp,0)*100)::numeric,2) AS gdp_growth,
-    y.price_growth,
-    y.wage_growth,
-    (y.price_growth - y.wage_growth) AS diff_price_vs_wage
-FROM yoy y
-JOIN gdp g USING (year)
-ORDER BY y.year;
+    year,
+    gdp,
+    gdp_growth,
+    price_growth,
+    wage_growth,
+    price_growth_next_year,
+    wage_growth_next_year,
+    ROUND((price_growth - wage_growth)::numeric,2) AS diff_price_vs_wage,
+    ROUND((price_growth_next_year - wage_growth_next_year)::numeric,2) AS diff_price_vs_wage_next_year
+FROM combined
+ORDER BY year;
+
 
